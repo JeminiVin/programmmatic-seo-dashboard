@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "jaipur",
+    "cityName": "Jaipur",
+    "title": "Best Web Development Services in Jaipur",
+    "description": "Top-rated full-stack development and SEO services in Jaipur."
+  },
+  {
+    "slug": "delhi",
+    "cityName": "Delhi",
+    "title": "Top Web Development Agency in Delhi",
+    "description": "High-performance Next.js and MERN stack solutions in Delhi."
+  },
+  {
+    "slug": "mumbai",
+    "cityName": "Mumbai",
+    "title": "Scalable Web Apps in Mumbai",
+    "description": "Custom SaaS and Programmatic SEO services in Mumbai."
+  }
+]
