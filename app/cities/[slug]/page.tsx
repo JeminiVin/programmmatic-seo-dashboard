@@ -2,12 +2,14 @@ import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
 import CityLeadForm from "@/app/components/CityLeadForm";
 
+export const dynamic = "force-dynamic"; // Yeh line prerender error ko fix karegi
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props) {
-  const resolvedParams = await params; // Awaiting params Promise
+  const resolvedParams = await params;
   const { data: city } = await supabase
     .from("rowdata")
     .select("*")
@@ -26,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function CityLandingPage({ params }: Props) {
-  const resolvedParams = await params; // Awaiting params Promise
+  const resolvedParams = await params;
   
   const { data: city, error } = await supabase
     .from("rowdata")
