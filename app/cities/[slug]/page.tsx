@@ -2,8 +2,6 @@ import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
 import CityLeadForm from "@/app/components/CityLeadForm";
 
-export const dynamic = "force-dynamic"; // Yeh line prerender error ko fix karegi
-
 type Props = {
   params: Promise<{ slug: string }>;
 };
