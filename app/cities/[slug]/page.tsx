@@ -1,12 +1,14 @@
 import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
 import CityLeadForm from "@/app/components/CityLeadForm";
+import { unstable_noStore as noStore } from "next/cache";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props) {
+  noStore(); // Prerender caching conflict ko rokne ke liye
   const resolvedParams = await params;
   const { data: city } = await supabase
     .from("rowdata")
@@ -26,6 +28,7 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function CityLandingPage({ params }: Props) {
+  noStore(); // Prerender caching conflict ko rokne ke liye
   const resolvedParams = await params;
   
   const { data: city, error } = await supabase
